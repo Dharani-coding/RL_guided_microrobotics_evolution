@@ -12,6 +12,49 @@ an MJCF assembly, physically simulated, scored on multiple objectives
 (e.g. folded-gait velocity), and selected via NSGA-III. See
 [`src/main.py`](src/main.py) for the full loop description.
 
+<p align="center">
+  <img src="images/evolved_light_response.gif" width="560" alt="Evolved roblet turning toward a light stimulus in MuJoCo">
+  <br><em>An evolved morphology walking under magnetic actuation, then yawing toward a light ("pheromone") stimulus.</em>
+</p>
+
+## Highlights
+
+**Physical roblet and its MuJoCo digital twin.** Module meshes and mass
+properties come from the CAD. The twin is rendered transparent so the
+embedded-magnet placement can be checked.
+
+<p align="center">
+  <img src="images/hardware_vs_digital_twin.jpg" width="720" alt="Physical roblet (left) and MuJoCo digital twin (right)">
+</p>
+
+**Pipeline.** A graph-transformer PPO actor picks each grammar-legal
+mutation/crossover. Offspring are mirrored, collision-checked and simulated
+(folding, magnetic gait, light response), and NSGA-III selects the next
+generation.
+
+<p align="center">
+  <img src="images/pipeline.png" width="420" alt="RL-guided NSGA-III pipeline">
+</p>
+
+**Evolved morphologies** over 300 generations diverge into structurally
+distinct, bilaterally symmetric bodies for the attractive and repulsive
+light responses.
+
+<p align="center">
+  <img src="images/morphology_grid.png" width="720" alt="Evolved morphologies across generations">
+</p>
+
+**Results.** Hypervolume rises steadily over the run without levelling off
+(left). Compared with uniform-random operator selection, the RL policy cuts
+the rate of colliding (invalid) offspring from about 30% to about 10% in the
+second half of the run (right). It also reaches a higher best-of-run velocity, but the
+random-operator baseline keeps a higher hypervolume overall.
+
+<p align="center">
+  <img src="images/results.png" width="900" alt="Hypervolume across generations and collision rate RL vs. standard NSGA-III">
+</p>
+
+
 ## Repository layout
 
 | Path                                                                                                | What it's for                                                                                                              |
