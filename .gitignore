@@ -10,3 +10,6 @@
 Dissertation_report.*
 !Dissertation_report.pdf
 !Dissertation_report.tex
+/assets/*
+/meshes/*
+design_info.txt

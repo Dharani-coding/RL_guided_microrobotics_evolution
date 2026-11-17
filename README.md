@@ -12,6 +12,13 @@ an MJCF assembly, physically simulated, scored on multiple objectives
 (e.g. folded-gait velocity), and selected via NSGA-III. See
 [`src/main.py`](src/main.py) for the full loop description.
 
+> **Attribution.** The Roblet hardware (module design, CAD, fabrication and
+> physical experiments) is the work of the
+> [Sheffield Microrobotics Lab (SML)](https://sites.google.com/sheffield.ac.uk/microrobotics/home).
+> This repository covers only my own contribution: the evolutionary design
+> pipeline and the MuJoCo simulation. No lab CAD files, unpublished data or
+> other confidential lab material are included.
+
 <p align="center">
   <img src="images/evolved_light_response.gif" width="560" alt="Evolved roblet turning toward a light stimulus in MuJoCo">
   <br><em>An evolved morphology walking under magnetic actuation, then yawing toward a light ("pheromone") stimulus.</em>
@@ -25,6 +32,7 @@ embedded-magnet placement can be checked.
 
 <p align="center">
   <img src="images/hardware_vs_digital_twin.jpg" width="720" alt="Physical roblet (left) and MuJoCo digital twin (right)">
+  <br><em>Left: physical Roblet. Image credit: <a href="https://sites.google.com/sheffield.ac.uk/microrobotics/home">Sheffield Microrobotics Lab</a>. Right: MuJoCo digital twin (this work).</em>
 </p>
 
 **Pipeline.** A graph-transformer PPO actor picks each grammar-legal
